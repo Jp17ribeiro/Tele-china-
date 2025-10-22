@@ -292,29 +292,40 @@
       main { padding-left: 4px; padding-right: 4px; }
     }
     /* Mobile */
-    @media (max-width: 700px) {
-      .top-bar, nav { flex-direction: row; }
-      .brand-title { font-size: 1.2rem; }
-      main { padding: 13px 2px 110px 2px;}
-      .categoria h2 { font-size: 1.01rem; }
-      .nav-links {
-        flex-direction: column;
-        background: var(--cor1);
-        position: absolute; left: 0; right: 0; top: 71px;
-        max-height: 0; /* controlado via JS */
-        padding: 0;
-        overflow: hidden;
-        box-shadow: 0 7px 14px #0008;
-        border-bottom: 2px solid var(--cor2);
-      }
-      .nav-links.open {
-        max-height: 400px;
-        transition: max-height .4s cubic-bezier(.17, .97, .62, .98);
-        padding-bottom: 15px;
-      }
-      .nav-link { margin: 10px 14px; }
-      .hamburger { display: flex; }
-    }
+@media (max-width: 700px) {
+  .top-bar, nav { flex-direction: row; }
+  .top-bar {
+    padding: 5px 8px !important; /* Reduz muito a altura! */
+  }
+  .logo-anim {
+    width: 54px;
+    height: 54px;
+  }
+  .logo-img {
+    width: 44px;
+    height: 44px;
+  }
+  .brand-title { font-size: 1.08rem; margin-left: 6px; }
+  main { padding: 8px 2px 90px 2px;}
+  .categoria h2 { font-size: 0.99rem; }
+  .nav-links {
+    flex-direction: column;
+    background: var(--cor1);
+    position: absolute; left: 0; right: 0; top: 54px;  /* Altura igual à .top-bar + logo! */
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 7px 14px #0008;
+    border-bottom: 2px solid var(--cor2);
+  }
+  .nav-links.open {
+    max-height: 400px;
+    transition: max-height .4s cubic-bezier(.17, .97, .62, .98);
+    padding-bottom: 10px;
+  }
+  .nav-link { margin: 7px 10px; }
+  .hamburger { display: flex; }
+}
   </style>
 </head>
 <body>
@@ -539,3 +550,4 @@ function filtrarPratos() {
   </script>
 </body>
 </html>
+
